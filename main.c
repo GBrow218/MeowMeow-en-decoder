@@ -1,6 +1,14 @@
 /* main.c - MeowMeow, a stream encoder/decoder */
 
 /* 00 system includes */
+#include <stdio.h>
+#include <stdlib.h>
+#include <io.h>
+#include <libgen.h>
+#include <string.h>
+#include <errno.h>
+#include <getopt.h>
+
 /* 01 project includes */
 #include "main.h"
 #include "mmencode.h"
