@@ -1,24 +1,33 @@
 /* main.c - MeowMeow, a stream encoder/decoder */
 
-/* 00 system includes */
+/* system includes */
 #include <stdio.h>
 #include <stdlib.h>
-#include <io.h>
+#include <unistd.h>
 #include <libgen.h>
 #include <string.h>
 #include <errno.h>
 #include <getopt.h>
 
-/* 01 project includes */
+/* project includes */
 #include "main.h"
 #include "mmencode.h"
 #include "mmdecode.h"
 
-/* 02 externs */
-/* 03 defines */
-/* 04 typedefs */
-/* 05 globals (but don't)*/
-/* 06 ancillary function prototypes if any */
+/* externs */
+extern char *optarg;
+extern int optopt;
+extern int opterr;
+extern int opterr;
+
+/* defines */
+#define OPTARG "i:o:hV"
+#define MM_OP_INVALID 0
+#define MM_OP_ENCODE 1
+#define MM_OP_DECODE 2
+
+int usage(char *, int);
+int pick_operation(char *);
 
 int main(int argc, char *argv[]) {
   /* 07 variable declarations */
